@@ -303,6 +303,71 @@ let nx = new next2multiple_1();
 console.log(nx.getNext())
 console.log(nx.getNext())
 
+//destructuring
+
+const [,y,m,d] = /^(\d\d\d\d)-(\d\d)-(\d\d)$/.exec("2020-12-10");
+console.log(y,m,d);
+
+//Optional parameter
+function run({a=1,b=2}={}){
+    return a + b;
+}
+console.log(run());
+
+//multiple parameters
+function run1(...args){
+    for(const arg of args){
+        console.log(arg);
+    }
+}
+run1(1,2,3);
+
+//apply function
+console.log(Math.max.apply(Math,[1,5,0,2,8,1]))
+
+let q = [1,2,3]
+let w = [4,5,6]
+console.log(Array.prototype.push.apply(q,w),q) // appends to q array
+
+// hex , octal and binary,big num
+console.log(0x34,0o34,0b10,1234n)
+
+//to other base
+console.log((45).toString(16))
+
+//custom base number to decimal
+console.log(Number.parseInt(45,8))
+
+//radix is missing or 0. Then radix is set to 16. As a rule, you should never omit the radix.
+
+//Counting leading zeros in an integer number is a critical operation in many DSP algorithms, such as normalization of samples in sound or video processing, as well as in real-time schedulers to quickly find the highest-priority task ready-to-run
+console.log(Math.clz32(1))
+
+//multiline template
+x = `   hello
+            HI
+            how are you?\n1
+`
+console.log(x)
+
+//Repaeting string
+console.log(x.repeat(5))
+
+//unicode
+//A combining mark is a sequence of two Unicode code points that is displayed as single symbol. The ES6 approach to reversing a string that I have presented here works for non-BMP code points, but not for combining marks. For those, you need a library, e.g. Mathias Bynens’ Esrever.
+console.log('\u{1F680}');
+
+//raw string to get \n to \\n like
+console.log(String.raw`x\n1`)
+
+// Iterable
+x = [1,2,3]
+z = x[Symbol.iterator]();
+console.log(z.next())
+
+console.log(nx.getNext())
+console.log(nx.getNext())
+
 
 
 
